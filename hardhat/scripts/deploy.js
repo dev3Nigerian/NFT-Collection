@@ -21,11 +21,11 @@ async function main() {
   console.log(
     "OdigboNFT Contract Address:", deployedOdigboNFTContract.address
   );
-
-  main()
-    .then(() => process.exit(0))
-    .catch((err) => {
-      console.error(err);
-      process.exit(1);
-    });
 }
+
+main()
+  .then(() => process.exit(0))
+  .catch((error) => {
+    console.error(error);
+    process.exit(1);
+  });
