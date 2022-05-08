@@ -62,6 +62,17 @@ contract OdigboNFT is ERC721Enumerable, Ownable {
         _safeMint(msg.sender, tokenIds);
     }
 
+    function mint() public payable onlyWhenNotPaused {
+        require(
+            presaleStarted && block.timestamp >= presaleEnded,
+            "Presale has not ended yet"
+        );
+        require(tokenIds < maxTokenIds, "Exceeded maximum OdigboNFT supply");
+        require(msg.value >= _price, "ETH sent is not correct");
+        tokenIds += 1;
+        _safeMint(msg.sender, tokenIds);
+    }
+
     // @OdigboNFT _baseURI overrides the openzeppelin ERC721 implementation which by default returned an empty string for the baseURI
 
     function _baseURI() internal view virtual override returns (string memory) {
