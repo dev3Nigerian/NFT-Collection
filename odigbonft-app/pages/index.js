@@ -2,8 +2,8 @@ import { Contract, providers, utils } from "ethers";
 import Head from "next/head";
 import Image from "next/image";
 import OdigboNFT from "../public/OdigboNFT/0.jpg"
-import React, { useEffect, useRef, useState } from "../constants";
-import Web3modal from "web3modal";
+import React, { useEffect, useRef, useState } from "react";
+import Web3Modal from "web3modal";
 import { abi, NFT_CONTRACT_ADDRESS } from "../constants";
 import styles from "../styles/Home.module.css";
 
@@ -346,7 +346,7 @@ export default function Home() {
           {renderButton()}
         </div>
         <div>
-          <Image src={OdigboNFT} alt="Picture of NFT" />
+          <Image className={styles.image} src={OdigboNFT} alt="Picture of NFT" />
         </div>
       </div>
 
