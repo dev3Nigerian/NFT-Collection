@@ -221,7 +221,7 @@ export default function Home() {
     const web3Provider = new providers.Web3Provider(provider);
 
     // Throw error if user is not connected to Rinkeby
-    const { chainId } = awaitweb3Provider.getNetwork();
+    const { chainId } = await web3Provider.getNetwork();
     if (chainId !== 4) {
       window.alert("Change network to Rinkeby");
       throw new Error("Change network to Rinkeby");
@@ -346,7 +346,7 @@ export default function Home() {
           {renderButton()}
         </div>
         <div>
-          <Image className={styles.image} src={OdigboNFT} alt="Picture of NFT" />
+          <Image className={styles.image} src={OdigboNFT} alt="Picture of NFT" width={400} height={300} />
         </div>
       </div>
 
