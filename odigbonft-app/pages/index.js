@@ -296,7 +296,7 @@ export default function Home() {
     if (!presaleStarted) {
       return (
         <div>
-          <div className={styles.button}>Presale hasn&apost started!</div>
+          <div className={styles.button}>Presale hasnt started!</div>
         </div>
       );
     }
