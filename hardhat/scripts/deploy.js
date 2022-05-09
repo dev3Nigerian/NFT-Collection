@@ -10,16 +10,16 @@ async function main() {
   const metadataURL = METADATA_URL;
 
   // OdigboNFTContract here is a factory for insstances of OdigboNFT contract 
-  const OdigboNFTContract = await ethers.getContractFactory("OdigboNFT");
+  const OdigboFaithfulNFTContract = await ethers.getContractFactory("OdigboFaithfulNFT");
 
   // deploy the contract
-  const deployedOdigboNFTContract = await OdigboNFTContract.deploy(
+  const deployedOdigboFaithfulNFTContract = await OdigboFaithfulNFTContract.deploy(
     metadataURL,
     whitelistContract
   );
 
   console.log(
-    "OdigboNFT Contract Address:", deployedOdigboNFTContract.address
+    "OdigboFaithfulNFT Contract Address:", deployedOdigboFaithfulNFTContract.address
   );
 }
 

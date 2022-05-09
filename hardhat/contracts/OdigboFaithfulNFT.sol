@@ -5,7 +5,7 @@ import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "./IWhitelist.sol";
 
-contract OdigboNFT is ERC721Enumerable, Ownable {
+contract OdigboFaithfulNFT is ERC721Enumerable, Ownable {
     string _baseTokenURI;
 
     // _price is the price of one Odigbo NFT
@@ -38,7 +38,7 @@ contract OdigboNFT is ERC721Enumerable, Ownable {
      *It also initializes an instance of whitelist interface.
      */
     constructor(string memory baseURI, address whitelistContract)
-        ERC721("OdigboNFT", "ODG")
+        ERC721("OdigboFaithfulNFT", "ODF")
     {
         _baseTokenURI = baseURI;
         whitelist = IWhitelist(whitelistContract);
