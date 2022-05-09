@@ -62,6 +62,7 @@ contract OdigboNFT is ERC721Enumerable, Ownable {
         _safeMint(msg.sender, tokenIds);
     }
 
+    // allows a user to mint 1 NFT per transactiion after presale has ended
     function mint() public payable onlyWhenNotPaused {
         require(
             presaleStarted && block.timestamp >= presaleEnded,
@@ -92,7 +93,7 @@ contract OdigboNFT is ERC721Enumerable, Ownable {
         require(sent, "Failed to send Ether");
     }
 
-    // Function to receive Ether msg.data must not be empty
+    // Function to receive Ether. msg.data must not be empty
     receive() external payable {}
 
     // Fallback function is called when msg.data is not empty
